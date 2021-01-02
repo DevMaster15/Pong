@@ -34,7 +34,8 @@ class Display:
         gameBall.show_ball(ballColor, screen)
         
         # Draw paddle
-        gamePaddle = Paddle(self.WIDTH-Paddle.WIDTH, self.HEIGHT//2)
+        gamePaddle = Paddle(100)
+        gamePaddle.show_paddle("white", screen, self)
         
         # pygame.display.flip()
 
@@ -53,6 +54,7 @@ class Display:
 
             pygame.display.flip()
             gameBall.updateMove(self, ballColor, screen, bgColor)
+            gamePaddle.updateMove(screen, self)
 
             pygame.display.update()
             clock.tick(60)
